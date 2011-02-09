@@ -34,7 +34,7 @@ class My_Dynamic_Collection_EntryTest extends PHPUnit_Framework_TestCase
      */
     public function testPropertiesCanBePopulated($property, $value)
     {
-        $this->_entry->setProperty($property);
+        $this->_entry->addProperty($property);
         $setter = 'set' . ucfirst($property);
         $getter = 'get' . ucfirst($property);
         $this->_entry->$setter($value);

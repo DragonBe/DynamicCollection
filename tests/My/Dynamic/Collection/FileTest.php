@@ -32,8 +32,8 @@ class My_Dynamic_Collection_FileTest extends PHPUnit_Framework_TestCase
     public function fileProvider()
     {
         return array (
-            array (TEST_PATH . '/_files/foo.txt', 'Publishing'),
-            array (TEST_PATH . '/_files/bar.txt', 'Frameworks'),
+            array (TEST_PATH . '/_files/foo.txt', 'Publishing', 3),
+            array (TEST_PATH . '/_files/bar.txt', 'Frameworks', 3),
         );
     }
     /**
@@ -60,6 +60,18 @@ class My_Dynamic_Collection_FileTest extends PHPUnit_Framework_TestCase
         try {
             $this->_file->checkFile($file);
         } catch (My_Dynamic_Collection_Exception $e) {
+            chmod($file, 0644);
+            return;
+        }
+        $this->fail('Expected exception not thrown');
+    }
+    public function testCheckFileThrowsExceptionForWrongExtension()
+    {
+        $file = TEST_PATH . '/_files/wrongfile.chk';
+        try {
+            $this->_file->loadFile($file);
+        } catch (My_Dynamic_Collection_Exception $e) {
+            chmod($file, 0644);
             return;
         }
         $this->fail('Expected exception not thrown');
@@ -75,11 +87,40 @@ class My_Dynamic_Collection_FileTest extends PHPUnit_Framework_TestCase
     /**
      * @dataProvider fileProvider
      */
-    public function testFileCanBeLoaded($file)
+    public function testFileCanBeLoaded($file, $filename, $count)
     {
         $this->_file->loadFile($file);
-        $this->assertSame(2, count($this->_file));
-        $this->assertSame(array ('Publishing', 'Frameworks'), $this->_file->getFileNames());
+        $this->assertSame($count, count($this->_file));
+        $this->assertSame($filename, $this->_file->getFileName());
+        $this->assertType('array', $this->_file->getEntries());
+    }
+    /**
+     * @dataProvider fileProvider
+     */
+    public function testFileIsIterator($file, $filename, $count)
+    {
+        $this->_file->loadFile($file);
+        $this->assertType('My_Dynamic_Collection_Entry', $this->_file->seek($count - 1)->current());
+        $this->assertTrue($this->_file->valid());
+        $this->assertSame(0, $this->_file->rewind()->key());
+        $this->assertSame(1, $this->_file->next()->key());
+        try {
+            $this->_file->seek($count+1);
+            $this->fail('Expected exception not thrown');
+        } catch (OutOfBoundsException $e) {
+            /** expected exception **/
+        }
     }
     
+    public function testFileCanBeConvertedIntoAnArray()
+    {
+        $this->_file->loadFile(TEST_PATH . '/_files/foo.txt');
+        $array = $this->_file->toArray();
+        $this->assertType('array', $array);
+        $this->assertArrayHasKey('filename', $array);
+        $this->assertArrayHasKey('count', $array);
+        $this->assertSame(3, $array['count']);
+        $this->assertArrayHasKey('entries', $array);
+        $this->assertType('array', $array['entries']);
+    }
 }

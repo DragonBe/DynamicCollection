@@ -33,9 +33,9 @@ class My_Dynamic_Collection_Entry implements Countable
      * @param 	string $property
      * @return	My_Dynamic_Collection_Entry
      */
-    public function setProperty($property)
+    public function addProperty($property)
     {
-        $property = strtolower($property);
+        $property = strtolower((string) $property);
         if (!$this->hasProperty($property)) {
             $this->_properties[$property] = null;
             $this->_count++;
@@ -51,7 +51,7 @@ class My_Dynamic_Collection_Entry implements Countable
     public function setProperties($properties)
     {
         foreach ($properties as $property) {
-            $this->setProperty($property);
+            $this->addProperty($property);
         }
         return $this;
     }
@@ -124,5 +124,18 @@ class My_Dynamic_Collection_Entry implements Countable
     public function count()
     {
         return $this->_count;
+    }
+    /**
+     * Reprisent this object as an array
+     * 
+     * @return	array
+     */
+    public function toArray()
+    {
+        $array = array ();
+        foreach ($this->getProperties() as $property) {
+            $array[$property] = $this->$property;
+        }
+        return $array;
     }
 }

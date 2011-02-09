@@ -106,7 +106,20 @@ class My_Dynamic_Collection_File implements Countable, SeekableIterator
      */
     public function setEol($eol)
     {
-        $this->_eol = (string) $eol;
+        switch ((string) $eol) {
+            case '\\n':
+                $eol = "\n";
+                break;
+            case '\\r':
+                $eol = "\r";
+                break;
+            case '\\r\\n':
+                $eol = "\r\n";
+                break;
+            default:
+                break;
+        }
+        $this->_eol = $eol;
         return $this;
     }
     /**
@@ -129,27 +142,48 @@ class My_Dynamic_Collection_File implements Countable, SeekableIterator
     {
         $this->checkFile($file);
         $filePath = dirname($file);
-        $fileName = basename($file);
-        $fileType = substr($fileName, -3);
-        if ('txt' !== $fileType) {
+        $fileType = substr(basename($file), -3);
+        if ('txt' !== $fileType && 'csv' !== $fileType) {
             throw new My_Dynamic_Collection_Exception('Invalid file type ' . $fileType);
         }
+        
+        $config = $this->loadConfiguration($file);
+        $contents = file_get_contents($file);
+        $lines = explode($this->getEol(), $contents);
+        
+        foreach ($lines as $line) {
+            $entry = clone $config;
+            $properties = $entry->getProperties();
+            $values = explode($this->getSeparator(), $line);
+            $merged = array_combine($properties, $values);
+            foreach ($properties as $property) {
+                $entry->$property = $merged[$property];
+            }
+            $this->addEntry($entry);
+        }
+        return $this;
     }
     /**
      * Loads the configuration for a given file
      * 
      * @param 	string $file The full path of a file
-     * @return	My_Dynamic_Collection_File
+     * @return	My_Dynamic_Collection_Entry
      */
     public function loadConfiguration($file)
     {
         $filePath = dirname($file);
-        $fileName = baseName($file);
-        $baseFile = substr($fileName, 0, -4);
+        $baseFile = substr(basename($file), 0, -4);
         $file = sprintf('%s/%s.xml', $filePath, $baseFile);
         $this->checkFile($file);
         $xml = simplexml_load_file($file);
         $this->setFilename($xml['name']);
+        $this->setEol($xml['linedelimiter']);
+        $this->setSeparator($xml['fieldseparator']);
+        $entry = new My_Dynamic_Collection_Entry();
+        foreach ($xml->children() as $field) {
+            $entry->addProperty($field['name']);
+        }
+        return $entry;
     }
     /**
      * Checks the condition of a given file. It returns TRUE when the file
@@ -241,5 +275,22 @@ class My_Dynamic_Collection_File implements Countable, SeekableIterator
             throw new OutOfBoundsException('Invalid seek position provided');
         }
         return $this;
+    }
+    /**
+     * Reprisent this object as an array
+     * 
+     * @return	array
+     */
+    public function toArray()
+    {
+        $array = array (
+            'filename' => $this->getFilename(),
+            'entries' => array (),
+            'count' => $this->count(),
+        );
+        foreach ($this->getEntries() as $entry) {
+            $array['entries'][] = $entry->toArray();
+        }
+        return $array;
     }
 }
