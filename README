@@ -1,0 +1,6 @@
+DynamicCollection
+=================
+
+Using PHP and SPL to create a dynamic collection for reading CSV files with different amount of fields
+
+
