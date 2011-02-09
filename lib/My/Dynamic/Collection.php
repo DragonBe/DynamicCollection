@@ -7,7 +7,7 @@
  * @version		$Id:$
  *
  */
-class My_Dynamic_Collection implements Countable, SeekableIterator
+class My_Dynamic_Collection implements Countable, SeekableIterator, RecursiveIterator
 {
     /**
      * @var 	int The internal counter
@@ -52,6 +52,22 @@ class My_Dynamic_Collection implements Countable, SeekableIterator
         return $this->_data;
     }
     /**
+     * Converts this class into an array
+     * 
+     * @return	array
+     */
+    public function toArray()
+    {
+        $array = array (
+            'data' => array (),
+            'count' => $this->count(),
+        );
+        foreach ($this->getData() as $data) {
+            $array['data'][] = $data->toArray();
+        }
+        return $array;
+    }
+    /**
      * (non-PHPdoc)
      * @see Countable::count()
      */
@@ -62,18 +78,22 @@ class My_Dynamic_Collection implements Countable, SeekableIterator
     /**
      * (non-PHPdoc)
      * @see SeekableIterator::rewind()
+     * @return My_Dynamic_Collection
      */
     public function rewind()
     {
         $this->_position = 0;
+        return $this;
     }
     /**
      * (non-PHPdoc)
      * @see SeekableIterator::next()
+     * @return My_Dynamic_Collection
      */
     public function next()
     {
         ++$this->_position;
+        return $this;
     }
     /**
      * (non-PHPdoc)
@@ -112,5 +132,13 @@ class My_Dynamic_Collection implements Countable, SeekableIterator
             throw new OutOfBoundsException('Invalid position');
         }
         return $this;
+    }
+    public function hasChildren()
+    {
+        return 0 < count($this->getData());
+    }
+    public function getChildren()
+    {
+        return $this->getData();
     }
 }
