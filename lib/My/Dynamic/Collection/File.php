@@ -207,6 +207,17 @@ class My_Dynamic_Collection_File implements Countable, SeekableIterator
         return $goodFile;
     }
     /**
+     * Finds an entry based on a given code
+     * 
+     * @param 	string $filter
+     * @return	FilterIterator
+     */
+    public function findCode($filter)
+    {
+        $iterator = new My_Dynamic_Filter_Code($this, $filter);
+        return $iterator;
+    }
+    /**
      * (non-PHPdoc)
      * @see     Countable::count()
      * @return  int

@@ -123,4 +123,15 @@ class My_Dynamic_Collection_FileTest extends PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('entries', $array);
         $this->assertType('array', $array['entries']);
     }
+    
+    public function testSearchForCode()
+    {
+        $this->_file->loadFile(TEST_PATH . '/_files/foo.txt');
+        $results = $this->_file->findCode('P001');
+        $this->assertSame(1, count($results));
+        $results->rewind();
+        $result = $results->current();
+        $this->assertType('My_Dynamic_Collection_Entry', $result);
+        $this->assertSame('Wordpress', $result->getTitle());
+    }
 }
