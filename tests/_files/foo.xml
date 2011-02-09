@@ -1,0 +1,4 @@
+<resource name="Publishing" fieldseparator="," linedelimiter="\n">
+    <field name="code"/>
+    <field name="title"/>
+</resource>
