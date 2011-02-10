@@ -6,8 +6,8 @@ class My_Dynamic_Filter_CodeTest extends PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->_obj = new ArrayObject(array (
-            array ('code' => '123', 'result' => 'num'),
-            array ('code' => 'ABC', 'result' => 'alpha'),
+            new ArrayObject(array ('code' => '123', 'result' => 'num'), ArrayObject::ARRAY_AS_PROPS),
+            new ArrayObject(array ('code' => 'ABC', 'result' => 'alpha'), ArrayObject::ARRAY_AS_PROPS),
         ), ArrayObject::ARRAY_AS_PROPS);
         parent::setUp();
     }
