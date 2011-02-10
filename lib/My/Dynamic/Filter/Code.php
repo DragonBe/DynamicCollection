@@ -1,4 +1,21 @@
 <?php
+/**
+ * Example dynamic collection
+ * 
+ * @license		Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+ * @link		http://creativecommons.org/licenses/by-sa/3.0/
+ * @version		$Id:$
+ *
+ */
+/**
+ * My_Dynamic_Filter
+ * 
+ * This is a filtering class used to find entries that match a given filter.
+ * 
+ * @author 		dragonbe
+ * @package		My
+ *
+ */
 class My_Dynamic_Filter_Code extends FilterIterator
 {
     /**

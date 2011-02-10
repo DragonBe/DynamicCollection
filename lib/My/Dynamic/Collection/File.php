@@ -1,4 +1,21 @@
 <?php
+/**
+ * Example dynamic collection
+ * 
+ * @license		Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+ * @link		http://creativecommons.org/licenses/by-sa/3.0/
+ * @version		$Id:$
+ *
+ */
+/**
+ * My_Dynamic_Collection_File
+ * 
+ * This class contains all specification for a single file.
+ * 
+ * @author 		dragonbe
+ * @package		My
+ *
+ */
 class My_Dynamic_Collection_File implements Countable, SeekableIterator
 {
     const MDC_ENTRY_SEPARATOR = ',';

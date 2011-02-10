@@ -7,6 +7,14 @@
  * @version		$Id:$
  *
  */
+/**
+ * My_Dynamic_Collection
+ * 
+ * This collection class contains all objects dynamically generated for handling
+ * CSV files, with different headers and field count.
+ * 
+ * @package		My
+ */
 class My_Dynamic_Collection implements Countable, SeekableIterator, RecursiveIterator
 {
     /**

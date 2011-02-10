@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class My_Dynamic_Collection_File</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name">Class My_Dynamic_Collection_File</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+															<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+					</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">My_Dynamic_Collection_File</p>
+<p class="description"><p>This class contains all specification for a single file.</p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> dragonbe</li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_Dynamic---Collection---File.php.html">/Dynamic/Collection/File.php</a> (line <span class="field">18</span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+												<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+																																																																																																																																																																												
+												<div class="method-definition">
+											<span class="method-result">My_Dynamic_Collection_File</span>
+										<a href="#__construct" title="details" class="method-name">__construct</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+										<a href="#addEntry" title="details" class="method-name">addEntry</a>
+											(<span class="var-type"><a href="../My/My_Dynamic_Collection_Entry.html">My_Dynamic_Collection_Entry</a></span>&nbsp;<span class="var-name">$entry</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#checkFile" title="details" class="method-name">checkFile</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#count" title="details" class="method-name">count</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../My/My_Dynamic_Collection_Entry.html">My_Dynamic_Collection_Entry</a></span>
+										<a href="#current" title="details" class="method-name">current</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">FilterIterator</span>
+										<a href="#findCode" title="details" class="method-name">findCode</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$filter</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#getEntries" title="details" class="method-name">getEntries</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getEol" title="details" class="method-name">getEol</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getFilename" title="details" class="method-name">getFilename</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">string</span>
+										<a href="#getSeparator" title="details" class="method-name">getSeparator</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">int</span>
+										<a href="#key" title="details" class="method-name">key</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../My/My_Dynamic_Collection_Entry.html">My_Dynamic_Collection_Entry</a></span>
+										<a href="#loadConfiguration" title="details" class="method-name">loadConfiguration</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+										<a href="#loadFile" title="details" class="method-name">loadFile</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+										<a href="#next" title="details" class="method-name">next</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+										<a href="#rewind" title="details" class="method-name">rewind</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+										<a href="#seek" title="details" class="method-name">seek</a>
+											(<span class="var-type">int</span>&nbsp;<span class="var-name">$position</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+										<a href="#setEol" title="details" class="method-name">setEol</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$eol</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+										<a href="#setFilename" title="details" class="method-name">setFilename</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$filename</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+										<a href="#setSeparator" title="details" class="method-name">setSeparator</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$separator</span>)
+									</div>
+																<div class="method-definition">
+											<span class="method-result">array</span>
+										<a href="#toArray" title="details" class="method-name">toArray</a>
+										()
+									</div>
+																<div class="method-definition">
+											<span class="method-result">boolean</span>
+										<a href="#valid" title="details" class="method-name">valid</a>
+										()
+									</div>
+								</div>
+		</div>
+	</div>		
+
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+																<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+
+<a name="method__construct" id="__construct"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">Constructor __construct</span> (line <span class="line-number">49</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Constructor of this My_Dynamic_Collection_File</p>
+	
+	<div class="method-signature">
+		<span class="method-result">My_Dynamic_Collection_File</span>
+		<span class="method-name">
+			__construct
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodaddEntry" id="addEntry"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">addEntry</span> (line <span class="line-number">62</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Adds an entry to this collection</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+		<span class="method-name">
+			addEntry
+		</span>
+					(<span class="var-type"><a href="../My/My_Dynamic_Collection_Entry.html">My_Dynamic_Collection_Entry</a></span>&nbsp;<span class="var-name">$entry</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type"><a href="../My/My_Dynamic_Collection_Entry.html">My_Dynamic_Collection_Entry</a></span>
+				<span class="var-name">$entry</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcheckFile" id="checkFile"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">checkFile</span> (line <span class="line-number">212</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Checks the condition of a given file.</p>
+<p class="description"><p>It returns TRUE when the file can be accessed by the application or FALSE when there's a problem.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> My_Dynamic_Collection_Exception</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			checkFile
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span><span class="var-description">: The location of a given file</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodcount" id="count"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">count</span> (line <span class="line-number">241</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">(non-PHPdoc)</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> Countable::count()
+ @</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			count
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodcurrent" id="current"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">current</span> (line <span class="line-number">288</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">(non-PHPdoc)</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> SeekableIterator::current()
+ @</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../My/My_Dynamic_Collection_Entry.html">My_Dynamic_Collection_Entry</a></span>
+		<span class="method-name">
+			current
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodfindCode" id="findCode"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">findCode</span> (line <span class="line-number">231</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Finds an entry based on a given code</p>
+	
+	<div class="method-signature">
+		<span class="method-result">FilterIterator</span>
+		<span class="method-name">
+			findCode
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$filter</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$filter</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodgetEntries" id="getEntries"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getEntries</span> (line <span class="line-number">73</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Returns an array containing objects of type My_Dynamic_Collection_Entry</p>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			getEntries
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetEol" id="getEol"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getEol</span> (line <span class="line-number">146</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the used line ending delimiter</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getEol
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetFilename" id="getFilename"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">getFilename</span> (line <span class="line-number">93</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the filename of this File</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getFilename
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodgetSeparator" id="getSeparator"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">getSeparator</span> (line <span class="line-number">113</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Retrieve the used separator between data</p>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			getSeparator
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodkey" id="key"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">key</span> (line <span class="line-number">279</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">(non-PHPdoc)</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> SeekableIterator::key()
+ @</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">int</span>
+		<span class="method-name">
+			key
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodloadConfiguration" id="loadConfiguration"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">loadConfiguration</span> (line <span class="line-number">188</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loads the configuration for a given file</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../My/My_Dynamic_Collection_Entry.html">My_Dynamic_Collection_Entry</a></span>
+		<span class="method-name">
+			loadConfiguration
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span><span class="var-description">: The full path of a file</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodloadFile" id="loadFile"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">loadFile</span> (line <span class="line-number">157</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Loads the data entries of a given file</p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> My_Dynamic_Collection_Exception</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+		<span class="method-name">
+			loadFile
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$file</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$file</span><span class="var-description">: The full path of a file</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodnext" id="next"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">next</span> (line <span class="line-number">260</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">(non-PHPdoc)</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> SeekableIterator::next()
+ @</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+		<span class="method-name">
+			next
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodrewind" id="rewind"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">rewind</span> (line <span class="line-number">250</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">(non-PHPdoc)</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> SeekableIterator::rewind()
+ @</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+		<span class="method-name">
+			rewind
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodseek" id="seek"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">seek</span> (line <span class="line-number">298</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">(non-PHPdoc)</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> SeekableIterator::seek()
+ @</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+		<span class="method-name">
+			seek
+		</span>
+					(<span class="var-type">int</span>&nbsp;<span class="var-name">$position</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">int</span>
+				<span class="var-name">$position</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetEol" id="setEol"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setEol</span> (line <span class="line-number">123</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the line ending delimiter</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+		<span class="method-name">
+			setEol
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$eol</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$eol</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetFilename" id="setFilename"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">setFilename</span> (line <span class="line-number">83</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the filename for this File</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+		<span class="method-name">
+			setFilename
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$filename</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$filename</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsetSeparator" id="setSeparator"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">setSeparator</span> (line <span class="line-number">103</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Sets the separator between data entry fields</p>
+	
+	<div class="method-signature">
+		<span class="method-result"><a href="../My/My_Dynamic_Collection_File.html">My_Dynamic_Collection_File</a></span>
+		<span class="method-name">
+			setSeparator
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$separator</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$separator</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodtoArray" id="toArray"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<span class="method-title">toArray</span> (line <span class="line-number">311</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Reprisent this object as an array</p>
+	
+	<div class="method-signature">
+		<span class="method-result">array</span>
+		<span class="method-name">
+			toArray
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodvalid" id="valid"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<span class="method-title">valid</span> (line <span class="line-number">270</span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">(non-PHPdoc)</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> SeekableIterator::valid()
+ @</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			valid
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+
+	<p class="notes" id="credit">
+		Documentation generated on Thu, 10 Feb 2011 10:10:35 +0100 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.1</a>
+	</p>
+	</div></body>
+</html>
